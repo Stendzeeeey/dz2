@@ -1,0 +1,21 @@
+#include "pt4.h"
+#include <cmath>
+using namespace std;
+
+double colculaten(int n) {
+	double sh = 0;
+	if (n >= 1) {
+		for (double i = 9; i >= n; i--) {
+			sh += pow(1 / i, n);
+		}
+	}
+	return sh;
+}
+
+void Solve()
+{
+    Task("TheTwo13");
+	int n;
+	pt >> n;
+	pt << colculaten(n);
+}
