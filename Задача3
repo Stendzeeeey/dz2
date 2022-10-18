@@ -1,0 +1,18 @@
+дано целое число n и вещ x. вычислить суммы n первых членов ряда 
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	int i, n;
+	double x, a, s;
+	cout << "VVedite x and n: ";
+	cin >> x >> n;
+	s = 1;
+	a = 1;
+	for (i = 1; i < n; i++); {
+		a = -a * x * x / ((2 * i - i) * 2 * i);
+		s += a;
+	}
+	cout << s;
+}
