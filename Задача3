@@ -1,18 +1,33 @@
-дано целое число n и вещ x. вычислить суммы n первых членов ряда 
+дано целое число n и вещ x. вычислить суммы n первых членов ряда 1 - x^2/2! ... Вычислить для cos x
 #include <iostream>
+#include <windows.h>
 #include <cmath>
 using namespace std;
 int main()
 {
-	int i, n;
-	double x, a, s;
-	cout << "VVedite x and n: ";
-	cin >> x >> n;
-	s = 1;
-	a = 1;
-	for (i = 1; i < n; i++); {
-		a = -a * x * x / ((2 * i - i) * 2 * i);
-		s += a;
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	double x;
+	double x1;
+	int n; 
+	double factorial = 1; 
+	double sum = 1; 
+	cout << "Введите х (в радианах): ";
+	cin >> x;
+	cout << "cos(x) = " << cos(x)<< endl;
+	cout << "Введите n: ";
+	cin >> n;
+	int z = 1;
+	x1 = 1;
+	for (int i = 1; i <= 2 * n; ++i) {
+		factorial *= i;
+		if (i % 2 == 0) {
+			x1 = x * x1;
+			z = (-z);
+			sum += z * ((x1 * x1) / factorial);
+		}
 	}
-	cout << s;
+	cout << "Сумма ряда равна: "<< sum << endl;
+	system("pause");
+	return 0;
 }
