@@ -1,0 +1,24 @@
+Муравей в первый день собрал 2 хвоинки для нового муравейника. В след день он собирает в 2 р больше и +1 хвоинку. Найти сколько хвоинок он соберет за n дней и в n день.
+#include "pt4.h"
+#include <iostream>
+using namespace std;
+
+void Solve()
+{
+    Task("TheTwo6");
+    int n, i, s = 2, d, h=2, p;
+    
+    pt >> n;
+    if (n == 1) {
+        s = h;
+        d = h;
+        pt << s << d;
+    }
+    else
+        for (i = 2, p = 2; i <= n; i++) {
+            d = (2 * p) + 1;
+            p = d;
+            s = s + p;
+    }
+    pt << p << s;
+}
